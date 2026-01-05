@@ -1,0 +1,13 @@
+# KiCad
+hardware/*-backups/
+hardware/*-cache.lib
+hardware/*.bak
+hardware/*.kicad_prl
+hardware/fp-info-cache
+hardware/~*.kicad_*
+hardware/*.kicad_pcb-bak
+hardware/*.kicad_sch-bak
+
+# misc stuff
+.DS_Store
+.idea
