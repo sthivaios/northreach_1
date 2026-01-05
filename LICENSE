@@ -1,0 +1,15 @@
+This project contains multiple components under different licenses:
+
+## Firmware (/firmware)
+Apache License 2.0
+Copyright (c) 2026 Stratos Thivaios
+
+## Hardware (/hardware)
+CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S)
+Copyright (c) 2026 Stratos Thivaios
+
+## Documentation & 3D Models (/docs, /enclosure)
+Creative Commons Attribution 4.0 International (CC BY-SA 4.0)
+Copyright (c) 2026 Stratos Thivaios
+
+See individual directories for full license texts.
