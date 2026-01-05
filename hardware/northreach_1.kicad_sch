@@ -1,0 +1,23 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "c29bc37c-99bf-4e1f-b307-e620ade74959")
+	(paper "A4")
+	(title_block
+		(title "NorthReach 1 - The opensource controller for presentations")
+		(date "2026-01-06")
+		(rev "v1.0")
+		(company "Stratos Thivaios")
+		(comment 1 "CERN Open Hardware License v2 - Strongly Reciprocal")
+		(comment 2 "Copyright © 2026 Stratos Thivaios")
+		(comment 3 "github.com/sthivaios/northreach_1")
+	)
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
