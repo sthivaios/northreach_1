@@ -7,6 +7,7 @@ hardware/fp-info-cache
 hardware/~*.kicad_*
 hardware/*.kicad_pcb-bak
 hardware/*.kicad_sch-bak
+hardware/#auto_saved_files#
 
 # misc stuff
 .DS_Store
