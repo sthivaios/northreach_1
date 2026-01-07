@@ -1,15 +1,16 @@
 # KiCad
-hardware/*-backups/
-hardware/*-cache.lib
-hardware/*.bak
-hardware/*.kicad_prl
-hardware/fp-info-cache
-hardware/~*.kicad_*
-hardware/*.kicad_pcb-bak
-hardware/*.kicad_sch-bak
-hardware/#auto_saved_files#
-hardware/_autosave*
+**/*-backups/
+**/*-cache.lib
+**/*.bak
+**/*.kicad_prl
+**/fp-info-cache
+**/~*.kicad_*
+**/*.kicad_pcb-bak
+**/*.kicad_sch-bak
+**/#auto_saved_files#
+**/_autosave*
 
 # misc stuff
 .DS_Store
 .idea
+
