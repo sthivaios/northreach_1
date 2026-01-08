@@ -533,7 +533,7 @@
     "netclass_patterns": [
       {
         "netclass": "Power",
-        "pattern": "GND|VDD"
+        "pattern": "GND|VDD|VBUS"
       },
       {
         "netclass": "Signals",
