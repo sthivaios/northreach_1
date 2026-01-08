@@ -2813,7 +2813,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00bcee70-841b-4e93-90a0-fdace309eca4")
-		(property "Reference" "J3"
+		(property "Reference" "J1"
 			(at 29.21 76.2 0)
 			(effects
 				(font
@@ -2919,7 +2919,7 @@
 		(instances
 			(project "northreach_1_button_board"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "J3")
+					(reference "J1")
 					(unit 1)
 				)
 			)
