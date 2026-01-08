@@ -678,400 +678,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C"
-				(at 0.635 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0.9652 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Unpolarized capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "C_0_1"
-				(polyline
-					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "LED:WS2812B"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 5.08 5.715 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right bottom)
-				)
-			)
-			(property "Value" "WS2812B"
-				(at 1.27 -5.715 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-				(at 1.27 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-				(at 2.54 -9.525 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Description" "RGB LED with integrated controller"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "RGB LED NeoPixel addressable"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "WS2812B_0_0"
-				(text "RGB"
-					(at 2.286 -4.191 0)
-					(effects
-						(font
-							(size 0.762 0.762)
-						)
-					)
-				)
-			)
-			(symbol "WS2812B_0_1"
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 1.778 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -3.556) (xy 1.778 -3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 -1.524) (xy 1.27 -2.54) (xy 1.27 -2.032)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 -2.54) (xy 1.27 -3.556) (xy 1.27 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.683 -1.016) (xy 3.683 -3.556) (xy 3.683 -4.064)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.699 -1.524) (xy 2.667 -1.524) (xy 3.683 -3.556) (xy 4.699 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.699 -3.556) (xy 2.667 -3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 5.08 5.08)
-					(end -5.08 -5.08)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "WS2812B_1_1"
-				(pin input line
-					(at -7.62 0 0)
-					(length 2.54)
-					(name "DIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 7.62 270)
-					(length 2.54)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "VSS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "DOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Mechanical:MountingHole_Pad"
 			(pin_numbers
 				(hide yes)
@@ -1809,8 +1415,8 @@
 		(uuid 2b69eb24-5f05-464e-b6c5-68fe384091eb)
 	)
 	(rectangle
-		(start 226.06 119.126)
-		(end 260.35 154.94)
+		(start 224.79 91.186)
+		(end 259.08 127)
 		(stroke
 			(width 0)
 			(type dash_dot)
@@ -1820,19 +1426,6 @@
 			(type none)
 		)
 		(uuid 7565d62d-460d-44ec-b2ea-67aa4276850a)
-	)
-	(rectangle
-		(start 209.55 59.436)
-		(end 273.05 95.25)
-		(stroke
-			(width 0)
-			(type dash_dot)
-			(color 0 1 255 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid f979d89a-82d5-458a-8fdd-fec5d6618364)
 	)
 	(text "Motherboard connector"
 		(exclude_from_sim no)
@@ -1849,7 +1442,7 @@
 	)
 	(text "Mounting Holes"
 		(exclude_from_sim no)
-		(at 226.06 116.84 0)
+		(at 224.79 88.9 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -1872,19 +1465,6 @@
 			(justify left)
 		)
 		(uuid "cfc67b2e-7700-4ca8-951e-bbd8b8c4f88b")
-	)
-	(text "Status LED"
-		(exclude_from_sim no)
-		(at 210.82 57.15 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(thickness 0.508)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "d0438834-8fcf-4172-b67a-c9387f8720ab")
 	)
 	(text_box "This is only the button board. Check hardware/motherboard/ for the schematic and board design of the motherboard."
 		(exclude_from_sim no)
@@ -1914,12 +1494,6 @@
 		(uuid "3e967863-b1da-4a72-9bf2-cb7d46d025f4")
 	)
 	(junction
-		(at 240.03 69.85)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "41eb5925-4160-48d8-8629-3ff4a31c6664")
-	)
-	(junction
 		(at 50.8 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1934,6 +1508,10 @@
 	(no_connect
 		(at 34.29 115.57)
 		(uuid "25a94567-a39c-4a35-8a6f-4c2261a1c912")
+	)
+	(no_connect
+		(at 34.29 110.49)
+		(uuid "472982b3-1a68-4073-a5c2-8a917f9225ce")
 	)
 	(no_connect
 		(at 34.29 113.03)
@@ -1951,10 +1529,6 @@
 		(at 34.29 120.65)
 		(uuid "c9f58020-ca68-4903-8568-18d7799c33c5")
 	)
-	(no_connect
-		(at 247.65 80.01)
-		(uuid "ef142ac8-d462-43cb-b868-da9c6fc8f471")
-	)
 	(wire
 		(pts
 			(xy 137.16 114.3) (xy 139.7 114.3)
@@ -1964,16 +1538,6 @@
 			(type default)
 		)
 		(uuid "11c996d6-6bc6-48bd-b6b3-078acad2b129")
-	)
-	(wire
-		(pts
-			(xy 240.03 69.85) (xy 264.16 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "12d7c006-abbb-4dcc-bbb3-f5ce61974f14")
 	)
 	(wire
 		(pts
@@ -1997,16 +1561,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 68.58) (xy 240.03 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1dc78df1-4433-4283-8137-18f4d7199452")
-	)
-	(wire
-		(pts
 			(xy 137.16 80.01) (xy 139.7 80.01)
 		)
 		(stroke
@@ -2027,7 +1581,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 134.62) (xy 238.76 134.62)
+			(xy 231.14 106.68) (xy 237.49 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2077,7 +1631,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 142.24) (xy 238.76 142.24)
+			(xy 231.14 114.3) (xy 237.49 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2217,7 +1771,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 127) (xy 238.76 127)
+			(xy 231.14 99.06) (xy 237.49 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2237,17 +1791,7 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 69.85) (xy 264.16 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0068f00-449e-4aec-82ab-637f98cf8502")
-	)
-	(wire
-		(pts
-			(xy 232.41 149.86) (xy 238.76 149.86)
+			(xy 231.14 121.92) (xy 237.49 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2264,16 +1808,6 @@
 			(type default)
 		)
 		(uuid "e208fd55-2682-4b33-8df1-62908a4ca91c")
-	)
-	(wire
-		(pts
-			(xy 240.03 69.85) (xy 240.03 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e95e63af-3191-484a-840f-cb68da87c2cd")
 	)
 	(global_label "BUTTON_UP"
 		(shape input)
@@ -2332,28 +1866,6 @@
 		(uuid "1d55f9d6-0499-400c-8d25-bdad99cfa394")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 52.7571 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "STATUS_LED_DATA"
-		(shape input)
-		(at 34.29 110.49 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1d8609f1-a19c-4563-82c4-4bd813fc4e2c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 53.8456 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2662,28 +2174,6 @@
 		(uuid "d249c3bc-1d82-404b-8281-902e0f19115b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 111.2543 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "STATUS_LED_DATA"
-		(shape input)
-		(at 232.41 80.01 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d2baf32c-9938-4621-80d6-4cc301042578")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 212.8544 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3339,72 +2829,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 240.03 87.63 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "259ac6ba-2040-4533-a248-c95722bb99ef")
-		(property "Reference" "#PWR040"
-			(at 240.03 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 240.03 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 240.03 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 240.03 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "35cd1577-55e9-448a-b35e-7c1602adbb13")
-		)
-		(instances
-			(project "northreach_1"
-				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "#PWR040")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 132.08 80.01 0)
 		(unit 1)
@@ -3474,7 +2898,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 238.76 147.32 0)
+		(at 237.49 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3483,7 +2907,7 @@
 		(fields_autoplaced yes)
 		(uuid "3119a516-f013-4bd7-8477-ac54773da5a1")
 		(property "Reference" "H4"
-			(at 241.3 144.7799 0)
+			(at 240.03 116.8399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3492,7 +2916,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 241.3 147.3199 0)
+			(at 240.03 119.3799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3501,7 +2925,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
-			(at 238.76 147.32 0)
+			(at 237.49 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3510,7 +2934,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 147.32 0)
+			(at 237.49 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3519,7 +2943,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 238.76 147.32 0)
+			(at 237.49 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3607,7 +3031,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 232.41 142.24 0)
+		(at 231.14 114.3 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3616,7 +3040,7 @@
 		(dnp no)
 		(uuid "374764cc-be2a-417c-9e8a-d9e5a3092fd2")
 		(property "Reference" "#PWR044"
-			(at 232.41 148.59 0)
+			(at 231.14 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3625,7 +3049,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 229.616 144.78 0)
+			(at 228.346 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3633,7 +3057,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 232.41 142.24 0)
+			(at 231.14 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3642,7 +3066,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 232.41 142.24 0)
+			(at 231.14 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3651,7 +3075,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 232.41 142.24 0)
+			(at 231.14 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3871,7 +3295,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 232.41 149.86 0)
+		(at 231.14 121.92 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3880,7 +3304,7 @@
 		(dnp no)
 		(uuid "5a0728f6-be29-4fec-870e-92665ac0b6b8")
 		(property "Reference" "#PWR045"
-			(at 232.41 156.21 0)
+			(at 231.14 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3889,7 +3313,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 229.616 152.4 0)
+			(at 228.346 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3897,7 +3321,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 232.41 149.86 0)
+			(at 231.14 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3906,7 +3330,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 232.41 149.86 0)
+			(at 231.14 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3915,7 +3339,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 232.41 149.86 0)
+			(at 231.14 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3937,7 +3361,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 232.41 134.62 0)
+		(at 231.14 106.68 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3946,7 +3370,7 @@
 		(dnp no)
 		(uuid "5f808813-2d6b-4691-9a51-a54f9e95f3b8")
 		(property "Reference" "#PWR043"
-			(at 232.41 140.97 0)
+			(at 231.14 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3955,7 +3379,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 229.616 137.16 0)
+			(at 228.346 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3963,7 +3387,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 232.41 134.62 0)
+			(at 231.14 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3972,7 +3396,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 232.41 134.62 0)
+			(at 231.14 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3981,7 +3405,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 232.41 134.62 0)
+			(at 231.14 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4062,84 +3486,6 @@
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
 					(reference "#PWR038")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 264.16 80.01 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "67b3817d-432b-4c3c-ba27-fa01f9878593")
-		(property "Reference" "C6"
-			(at 269.494 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 271.78 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 265.1252 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 264.16 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 264.16 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C28233"
-			(at 264.16 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7062ac51-5591-403f-b008-b07df306ddd9")
-		)
-		(pin "2"
-			(uuid "e77de8b4-9372-43b7-bc40-982ed8ac0058")
-		)
-		(instances
-			(project "northreach_1"
-				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -4281,7 +3627,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 238.76 132.08 0)
+		(at 237.49 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4290,7 +3636,7 @@
 		(fields_autoplaced yes)
 		(uuid "6e81f1b5-0111-4a24-bcd1-fb5dd039e984")
 		(property "Reference" "H2"
-			(at 241.3 129.5399 0)
+			(at 240.03 101.5999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4299,7 +3645,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 241.3 132.0799 0)
+			(at 240.03 104.1399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4308,7 +3654,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
-			(at 238.76 132.08 0)
+			(at 237.49 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4317,7 +3663,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 132.08 0)
+			(at 237.49 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4326,7 +3672,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 238.76 132.08 0)
+			(at 237.49 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4348,7 +3694,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 232.41 127 0)
+		(at 231.14 99.06 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4357,7 +3703,7 @@
 		(dnp no)
 		(uuid "8bf7f41b-b142-417b-ab85-0e1a8668c626")
 		(property "Reference" "#PWR042"
-			(at 232.41 133.35 0)
+			(at 231.14 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4366,7 +3712,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 229.616 129.54 0)
+			(at 228.346 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4374,7 +3720,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 232.41 127 0)
+			(at 231.14 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4383,7 +3729,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 232.41 127 0)
+			(at 231.14 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4392,7 +3738,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 232.41 127 0)
+			(at 231.14 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4407,72 +3753,6 @@
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
 					(reference "#PWR042")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 264.16 83.82 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8e6764bf-7efe-4797-bd65-92db567e2d51")
-		(property "Reference" "#PWR041"
-			(at 264.16 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 264.16 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 264.16 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 264.16 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 264.16 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8e877a40-e99e-4527-9937-97e41d43e40c")
-		)
-		(instances
-			(project "northreach_1"
-				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -4880,7 +4160,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 238.76 139.7 0)
+		(at 237.49 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4889,7 +4169,7 @@
 		(fields_autoplaced yes)
 		(uuid "ba4f00d3-bf68-4c51-a7f0-0f164f26e880")
 		(property "Reference" "H3"
-			(at 241.3 137.1599 0)
+			(at 240.03 109.2199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4898,7 +4178,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 241.3 139.6999 0)
+			(at 240.03 111.7599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4907,7 +4187,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
-			(at 238.76 139.7 0)
+			(at 237.49 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4916,7 +4196,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 139.7 0)
+			(at 237.49 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4925,7 +4205,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 238.76 139.7 0)
+			(at 237.49 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5005,91 +4285,6 @@
 			(project "northreach_1_button_board"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
 					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 240.03 80.01 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c56577ae-c808-4395-b8db-65027ab29224")
-		(property "Reference" "D1"
-			(at 251.46 73.5898 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B"
-			(at 251.46 76.1298 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 241.3 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 242.57 89.535 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller"
-			(at 240.03 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C2874885"
-			(at 240.03 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "261ee375-00b6-4fad-86a1-603c99756424")
-		)
-		(pin "3"
-			(uuid "6212d1d4-d91e-45b0-b61c-7de2fcd39082")
-		)
-		(pin "4"
-			(uuid "e521e6d9-158b-4b3f-ae34-8798160109df")
-		)
-		(pin "2"
-			(uuid "3c39274f-e400-40e1-ac2c-95e010080b37")
-		)
-		(instances
-			(project ""
-				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -5498,7 +4693,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 238.76 124.46 0)
+		(at 237.49 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5507,7 +4702,7 @@
 		(fields_autoplaced yes)
 		(uuid "f1e06352-130f-40be-a74a-617dff34e1e1")
 		(property "Reference" "H1"
-			(at 241.3 121.9199 0)
+			(at 240.03 93.9799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5516,7 +4711,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 241.3 124.4599 0)
+			(at 240.03 96.5199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5525,7 +4720,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
-			(at 238.76 124.46 0)
+			(at 237.49 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5534,7 +4729,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 124.46 0)
+			(at 237.49 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5543,7 +4738,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 238.76 124.46 0)
+			(at 237.49 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5625,72 +4820,6 @@
 			(project ""
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
 					(reference "#FLG01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VBUS")
-		(at 240.03 68.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f70142a2-75b8-4273-95fb-4e8fbf6d09b7")
-		(property "Reference" "#PWR039"
-			(at 240.03 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VBUS"
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 240.03 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 240.03 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9bd0137d-2a0a-4913-856e-2e2b8cb3cdd2")
-		)
-		(instances
-			(project "northreach_1"
-				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "#PWR039")
 					(unit 1)
 				)
 			)
