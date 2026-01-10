@@ -6405,6 +6405,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C596730"
+			(at 121.92 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "19"
 			(uuid "52a5dc2b-8996-46e1-8c20-d634d21339ef")
 		)
@@ -6521,6 +6530,15 @@
 		)
 		(property "Description" "RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, SMD, external antenna"
 			(at 232.41 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2980299"
+			(at 232.41 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6920,6 +6938,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C28233"
+			(at 228.6 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a71c4e2a-feec-4868-981b-3aa17d8955ef")
 		)
@@ -6980,6 +7007,15 @@
 			)
 		)
 		(property "Description" "1A, Low-Noise Low-Dropout Voltage Regulator, 3-35V Input, Adjustable 1.4-34V Output, VQFN-20"
+			(at 62.23 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C90084"
 			(at 62.23 160.02 0)
 			(effects
 				(font
@@ -7159,6 +7195,15 @@
 			)
 		)
 		(property "Description" "USB Full-Featured Type-C Receptacle connector"
+			(at 45.72 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5119948"
 			(at 45.72 67.31 0)
 			(effects
 				(font
@@ -7833,6 +7878,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C84375"
+			(at 73.66 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "fcb8dbd5-70fc-4bb9-bc87-ab54ec719c4a")
 		)
@@ -7894,6 +7948,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 125.73 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C28233"
 			(at 125.73 40.64 0)
 			(effects
 				(font
@@ -8165,6 +8228,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C84376"
+			(at 118.11 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2f2bf4e0-4894-4e7b-baec-ade5d94b99fa")
 		)
@@ -8291,6 +8363,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 123.19 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C84376"
+			(at 123.19 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8631,6 +8712,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C15850"
+			(at 228.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ddb825ed-f4b9-4e38-8db0-0fa6fcbca1a2")
 		)
@@ -8757,6 +8847,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 73.66 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C84375"
+			(at 73.66 50.8 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8891,6 +8990,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 77.47 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C28323"
 			(at 77.47 173.99 0)
 			(effects
 				(font
@@ -9358,6 +9466,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 38.1 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 38.1 153.67 0)
 			(effects
 				(font
