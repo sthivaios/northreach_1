@@ -12,9 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <stdio.h>
+#include "hid.h"
+
+#include <FreeRTOS.h>
+#include <task.h>
 
 void app_main(void)
 {
-    printf("Hello world!\n");
+
+  xTaskCreate(hid_task, "hid_task", 8192, NULL, 5, NULL);
+
 }
