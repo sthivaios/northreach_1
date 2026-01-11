@@ -12,7 +12,7 @@
 
 # firmware (esp-idf)
 firmware/build
-firmware/sdkconfig
+firmware/sdkconfig*
 firmware/managed_components
 firmware/cmake-build-debug
 firmware/dependencies.lock
