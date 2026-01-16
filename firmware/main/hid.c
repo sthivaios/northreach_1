@@ -14,6 +14,7 @@
 
 #include "hid.h"
 
+#include "buttons.h"
 #include "esp_log.h"
 
 #include "class/hid/hid_device.h"
@@ -21,7 +22,6 @@
 #include "tinyusb.h"
 #include "tinyusb_default_config.h"
 
-#define APP_BUTTON 12
 static const char *TAG = "hid_task";
 
 /************* TinyUSB descriptors ****************/
@@ -104,15 +104,6 @@ static void app_send_hid_demo(void)
 
 void hid_task(void *pvParameters)
 {
-    // Initialize button that will trigger HID reports
-    const gpio_config_t boot_button_config = {
-        .pin_bit_mask = BIT64(APP_BUTTON),
-        .mode = GPIO_MODE_INPUT,
-        .intr_type = GPIO_INTR_DISABLE,
-        .pull_up_en = true,
-        .pull_down_en = false,
-    };
-    ESP_ERROR_CHECK(gpio_config(&boot_button_config));
 
     ESP_LOGI(TAG, "USB initialization");
     tinyusb_config_t tusb_cfg = TINYUSB_DEFAULT_CONFIG();
@@ -128,13 +119,13 @@ void hid_task(void *pvParameters)
     ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
     ESP_LOGI(TAG, "USB initialization DONE");
 
+    button_queue_event_t button_event;
+
     while (1) {
         if (tud_mounted()) {
-            static bool send_hid_data = true;
-            if (send_hid_data) {
-                app_send_hid_demo();
-            }
-            send_hid_data = !gpio_get_level(APP_BUTTON);
+            while (button_queue_receive(&button_event, 0) == pdPASS) {
+                ESP_LOGI(TAG, "Button queue event");
+            };
         }
         vTaskDelay(pdMS_TO_TICKS(10));
     }
