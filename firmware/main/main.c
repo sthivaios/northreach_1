@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "hid.h"
+#include "buttons.h"
 
 #include <FreeRTOS.h>
 #include <task.h>
@@ -20,6 +21,7 @@
 void app_main(void)
 {
 
+  xTaskCreate(buttonTask, "button_task", 8192, NULL, 10, NULL);
   xTaskCreate(hid_task, "hid_task", 8192, NULL, 5, NULL);
 
 }
