@@ -14,6 +14,8 @@
 
 #ifndef NORTHREACH_1_BUTTONS_H
 #define NORTHREACH_1_BUTTONS_H
+#include "iot_button.h"
+#include "freertos/FreeRTOS.h"
 
 typedef enum {
   BTN_UP,
@@ -27,8 +29,16 @@ typedef enum {
   BTN_F5,
   BTN_ALT_F4,
   BTN_TASK_MGR,
-} button_id_enum;
+} button_id_t;
+
+typedef struct {
+  button_id_t button_id;
+  button_event_t event_type;
+} button_queue_event_t;
 
 void buttonTask( void *pvParameters );
+
+BaseType_t button_queue_receive(button_queue_event_t *button_event,
+                                 const TickType_t ticks_to_wait);
 
 #endif // NORTHREACH_1_BUTTONS_H
