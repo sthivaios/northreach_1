@@ -19,9 +19,14 @@
 #include "button_gpio.h"
 #include "button_types.h"
 #include "esp_log.h"
-
+#include "iot_button.h"
 
 static const char *TAG = "button_task";
+
+static void button_single_click_cb(void *arg,void *usr_data)
+{
+  ESP_LOGI(TAG, "Click event");
+}
 
 void buttons_init() {
 
@@ -32,10 +37,12 @@ void buttons_init() {
     .active_level = 0,
   };
   button_handle_t gpio_btn = NULL;
-  esp_err_t ret = iot_button_new_gpio_device(&btn_cfg, &btn_gpio_cfg, &gpio_btn);
+  iot_button_new_gpio_device(&btn_cfg, &btn_gpio_cfg, &gpio_btn);
   if(NULL == gpio_btn) {
     ESP_LOGE(TAG, "Button create failed");
   }
+
+  iot_button_register_cb(gpio_btn, BUTTON_PRESS_REPEAT, NULL, button_single_click_cb,NULL);
 
 }
 
