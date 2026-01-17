@@ -14,26 +14,29 @@
 
 #include "buttons.h"
 
+#include "freertos/FreeRTOS.h"
+
+#include "button_gpio.h"
+#include "button_types.h"
 #include "esp_log.h"
-#include <FreeRTOS.h>
-#include <freertos/queue.h>
+
 
 static const char *TAG = "button_task";
 
-QueueHandle_t button_queue;
-
 void buttons_init() {
-  button_queue = xQueueCreate( 50, sizeof( button_id_enum ) );
 
-  if( button_queue == NULL )
-  {
-    ESP_LOGE(TAG, "xQueueCreate() failed. button queue wasn't created. aborting as this is a fatal error.");
-    abort();
+  // create gpio button
+  const button_config_t btn_cfg = {0};
+  const button_gpio_config_t btn_gpio_cfg = {
+    .gpio_num = 12,
+    .active_level = 0,
+  };
+  button_handle_t gpio_btn = NULL;
+  esp_err_t ret = iot_button_new_gpio_device(&btn_cfg, &btn_gpio_cfg, &gpio_btn);
+  if(NULL == gpio_btn) {
+    ESP_LOGE(TAG, "Button create failed");
   }
-}
 
-QueueHandle_t get_button_queue(void) {
-  return button_queue;
 }
 
 void buttonTask( void *pvParameters )

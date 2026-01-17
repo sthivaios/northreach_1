@@ -130,11 +130,7 @@ void hid_task(void *pvParameters)
 
     while (1) {
         if (tud_mounted()) {
-            static bool send_hid_data = true;
-            if (send_hid_data) {
-                app_send_hid_demo();
-            }
-            send_hid_data = !gpio_get_level(APP_BUTTON);
+            // a
         }
         vTaskDelay(pdMS_TO_TICKS(10));
     }
