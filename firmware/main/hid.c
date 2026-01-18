@@ -14,6 +14,7 @@
 
 #include "hid.h"
 
+#include "buttons.h"
 #include "esp_log.h"
 
 #include "class/hid/hid_device.h"
@@ -21,7 +22,6 @@
 #include "tinyusb.h"
 #include "tinyusb_default_config.h"
 
-#define APP_BUTTON 12
 static const char *TAG = "hid_task";
 
 /************* TinyUSB descriptors ****************/
@@ -92,28 +92,19 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
 
 /********* Application ***************/
 
-static void app_send_hid_demo(void)
+void app_send_hid_keypress(int key)
 {
-    // Keyboard output: Send key 'a/A' pressed and released
-    ESP_LOGI(TAG, "Sending Keyboard report");
-    uint8_t keycode[6] = {HID_KEY_A};
+
+    uint8_t keycode[6] = { key };
     tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
-    vTaskDelay(pdMS_TO_TICKS(50));
+    while (!tud_hid_ready()) {
+        vTaskDelay(pdMS_TO_TICKS(1));
+    }
     tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
 }
 
 void hid_task(void *pvParameters)
 {
-    // Initialize button that will trigger HID reports
-    const gpio_config_t boot_button_config = {
-        .pin_bit_mask = BIT64(APP_BUTTON),
-        .mode = GPIO_MODE_INPUT,
-        .intr_type = GPIO_INTR_DISABLE,
-        .pull_up_en = true,
-        .pull_down_en = false,
-    };
-    ESP_ERROR_CHECK(gpio_config(&boot_button_config));
-
     ESP_LOGI(TAG, "USB initialization");
     tinyusb_config_t tusb_cfg = TINYUSB_DEFAULT_CONFIG();
 
@@ -129,9 +120,23 @@ void hid_task(void *pvParameters)
     ESP_LOGI(TAG, "USB initialization DONE");
 
     while (1) {
-        if (tud_mounted()) {
-            // a
+        while (tud_mounted()) {
+            button_id_enum button_pressed;
+            xButtonQueueReceive(&button_pressed, portMAX_DELAY);
+            switch (button_pressed) {
+                case BTN_LEFT:
+                    app_send_hid_keypress(HID_KEY_ARROW_LEFT);
+                    break;
+                case BTN_RIGHT:
+                    app_send_hid_keypress(HID_KEY_ARROW_RIGHT);
+                    break;
+                case BTN_ENTER:
+                    app_send_hid_keypress(HID_KEY_ENTER);
+                    break;
+                default:
+                    break;
+            }
         }
-        vTaskDelay(pdMS_TO_TICKS(10));
     }
+
 }
