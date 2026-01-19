@@ -121,60 +121,25 @@ void tud_resume_cb(void) {
 
 int failedKeypresses = 0;
 
-// void app_send_hid_keypress(int key)
-// {
-//
-//     if (!tud_hid_ready()) {
-//         ESP_LOGW(TAG, "HID not ready. The last keypress will be flushed from the queue without being sent.");
-//         failedKeypresses++;
-//         if (failedKeypresses > 3) {
-//             ESP_LOGE(TAG, "Over 3 failed keypresses, HID is messed up. Resetting.");
-//             esp_restart();
-//         }
-//         return;
-//     };
-//
-//     uint8_t keycode[6] = { key };
-//     tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
-//     while (!tud_hid_ready()) {
-//         vTaskDelay(pdMS_TO_TICKS(1));
-//     }
-//     tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
-// }
-
 void app_send_hid_keypress(int key)
 {
-    ESP_LOGI(TAG, "=== HID Send Start ===");
-    ESP_LOGI(TAG, "  mounted: %d", tud_mounted());
-    ESP_LOGI(TAG, "  ready: %d", tud_ready());
-    ESP_LOGI(TAG, "  suspended: %d", tud_suspended());
-    ESP_LOGI(TAG, "  hid_ready: %d", tud_hid_ready());
 
     if (!tud_hid_ready()) {
-        ESP_LOGW(TAG, "HID not ready, aborting");
+        ESP_LOGW(TAG, "HID not ready. The last keypress will be flushed from the queue without being sent.");
+        failedKeypresses++;
+        if (failedKeypresses > 3) {
+            ESP_LOGE(TAG, "Over 3 failed keypresses, HID is messed up. Resetting.");
+            esp_restart();
+        }
         return;
-    }
+    };
 
     uint8_t keycode[6] = { key };
-    bool result = tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
-    ESP_LOGI(TAG, "  Key down sent: %d", result);
-
-    // Wait for ready
-    uint32_t start = xTaskGetTickCount();
+    tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
     while (!tud_hid_ready()) {
-        if ((xTaskGetTickCount() - start) > pdMS_TO_TICKS(1000)) {
-            ESP_LOGE(TAG, "  Timeout waiting for HID ready!");
-            ESP_LOGI(TAG, "  mounted: %d", tud_mounted());
-            ESP_LOGI(TAG, "  ready: %d", tud_ready());
-            ESP_LOGI(TAG, "  suspended: %d", tud_suspended());
-            return;
-        }
-        vTaskDelay(pdMS_TO_TICKS(10));
+        vTaskDelay(pdMS_TO_TICKS(1));
     }
-
-    result = tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
-    ESP_LOGI(TAG, "  Key up sent: %d", result);
-    ESP_LOGI(TAG, "=== HID Send Complete ===");
+    tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
 }
 
 void hid_task(void *pvParameters)
