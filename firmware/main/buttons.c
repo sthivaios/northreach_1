@@ -86,16 +86,13 @@ void buttons_init() {
     ESP_LOGE(TAG, "Button 06 create failed");
   }
 
-  iot_button_register_cb(gpio02_btn, BUTTON_SINGLE_CLICK, NULL, button_single_click_cb,(void *)(intptr_t)BTN_LEFT);
-  iot_button_register_cb(gpio02_btn, BUTTON_PRESS_REPEAT, NULL, button_single_click_cb,(void *)(intptr_t)BTN_LEFT);
+  iot_button_register_cb(gpio02_btn, BUTTON_PRESS_DOWN, NULL, button_single_click_cb,(void *)(intptr_t)BTN_LEFT);
   iot_button_register_cb(gpio02_btn, BUTTON_LONG_PRESS_HOLD, NULL, button_single_click_cb,(void *)(intptr_t)BTN_LEFT);
 
-  iot_button_register_cb(gpio03_btn, BUTTON_SINGLE_CLICK, NULL, button_single_click_cb,(void *)(intptr_t)BTN_RIGHT);
-  iot_button_register_cb(gpio03_btn, BUTTON_PRESS_REPEAT, NULL, button_single_click_cb,(void *)(intptr_t)BTN_RIGHT);
+  iot_button_register_cb(gpio03_btn, BUTTON_PRESS_DOWN, NULL, button_single_click_cb,(void *)(intptr_t)BTN_RIGHT);
   iot_button_register_cb(gpio03_btn, BUTTON_LONG_PRESS_HOLD, NULL, button_single_click_cb,(void *)(intptr_t)BTN_RIGHT);
 
-  iot_button_register_cb(gpio06_btn, BUTTON_SINGLE_CLICK, NULL, button_single_click_cb,(void *)(intptr_t)BTN_ENTER);
-  iot_button_register_cb(gpio06_btn, BUTTON_PRESS_REPEAT, NULL, button_single_click_cb,(void *)(intptr_t)BTN_ENTER);
+  iot_button_register_cb(gpio06_btn, BUTTON_PRESS_DOWN, NULL, button_single_click_cb,(void *)(intptr_t)BTN_ENTER);
   iot_button_register_cb(gpio06_btn, BUTTON_LONG_PRESS_HOLD, NULL, button_single_click_cb,(void *)(intptr_t)BTN_ENTER);
 
 }
