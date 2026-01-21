@@ -15,7 +15,6 @@
 #include "buttons.h"
 #include "hid.h"
 
-#include <FreeRTOS.h>
 #include <task.h>
 
 void app_main(void) {

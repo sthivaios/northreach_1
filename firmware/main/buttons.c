@@ -25,7 +25,7 @@
 static const char *TAG = "button_task";
 
 QueueHandle_t xButtonEventQueue;
-static button_handle_t button_handles_array[10];
+static button_handle_t button_handles_array[11];
 
 // disgusting stupid array for getting a string from the enums to print to the
 // log
@@ -70,7 +70,7 @@ void buttons_init() {
   int i_pin = 2;
   int i_array = 0;
 
-  while (i_pin <= 11) {
+  while (i_pin <= 12) {
     const button_config_t btn_cfg = {0};
     const button_gpio_config_t btn_gpio_cfg = {
         .gpio_num = i_pin,
@@ -92,18 +92,27 @@ void buttons_init() {
     i_array++;
   }
 
-  const button_id_enum btn_ids[] = {BTN_LEFT,    BTN_RIGHT, BTN_UP,
-                                    BTN_DOWN,    BTN_ENTER, BTN_VOL_UP,
-                                    BTN_VOL_DOWN};
+  const button_id_enum btn_ids[] = {
+      BTN_LEFT, BTN_RIGHT, BTN_UP, BTN_DOWN,   BTN_ENTER,   BTN_F1,
+      BTN_F2,   BTN_F3,    BTN_F4, BTN_VOL_UP, BTN_VOL_DOWN};
 
-  for (int i = 0; i <= 6; i++) {
-    ESP_ERROR_CHECK(iot_button_register_cb(
-        button_handles_array[i], BUTTON_PRESS_DOWN, NULL,
-        button_single_click_cb, (void *)(intptr_t)btn_ids[i]));
-    ESP_ERROR_CHECK(iot_button_register_cb(
-        button_handles_array[i], BUTTON_LONG_PRESS_HOLD, NULL,
-        button_single_click_cb, (void *)(intptr_t)btn_ids[i]));
-    ESP_LOGI(TAG, "Registered callbacks for button [ %d ]", i + 2);
+  for (int i = 0; i <= 10; i++) {
+    ESP_LOGI(TAG, "Registering: Button array index: %d - %s", i,
+             button_names[btn_ids[i]]);
+    if (i <= 4 || i >= 9) {
+      ESP_ERROR_CHECK(iot_button_register_cb(
+          button_handles_array[i], BUTTON_PRESS_DOWN, NULL,
+          button_single_click_cb, (void *)(intptr_t)btn_ids[i]));
+      ESP_ERROR_CHECK(iot_button_register_cb(
+          button_handles_array[i], BUTTON_LONG_PRESS_HOLD, NULL,
+          button_single_click_cb, (void *)(intptr_t)btn_ids[i]));
+      // ESP_LOGI(TAG, "Registered callbacks for button [ %d ]", i);
+    } else {
+      ESP_ERROR_CHECK(iot_button_register_cb(
+          button_handles_array[i], BUTTON_LONG_PRESS_START, NULL,
+          button_single_click_cb, (void *)(intptr_t)btn_ids[i]));
+      // ESP_LOGI(TAG, "Registered long press callbacks for button [ %d ]", i);
+    }
   }
 }
 

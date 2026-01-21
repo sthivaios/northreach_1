@@ -130,7 +130,7 @@ void reset_connection(void) {
   tud_connect();
 }
 
-void app_send_hid_keypress(const int key) {
+void app_send_hid_keypress(const uint8_t key, const uint8_t modifiers) {
 
   if (!tud_hid_ready()) {
     reset_connection();
@@ -139,7 +139,7 @@ void app_send_hid_keypress(const int key) {
   };
 
   const uint8_t keycode[6] = {key};
-  tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
+  tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, modifiers, keycode);
   while (!tud_hid_ready()) {
     vTaskDelay(pdMS_TO_TICKS(1));
   }
@@ -178,7 +178,7 @@ void hid_task(void *pvParameters) {
       tinyusb_driver_install(&tusb_cfg)); // aborts if not installed properly
   ESP_LOGI(TAG, "USB initialization DONE");
 
-  vTaskDelay(pdMS_TO_TICKS(250));
+  vTaskDelay(pdMS_TO_TICKS(1000));
   if (!tud_mounted()) {
     ESP_LOGE(TAG, "Unmounted!");
     reset_connection();
@@ -194,6 +194,7 @@ void hid_task(void *pvParameters) {
         uint16_t hid_button;
         uint16_t hid_consumer;
         bool is_consumer;
+        uint8_t modifiers;
       };
       const struct button_info button_to_hid[11] = {
           [BTN_LEFT] = {HID_KEY_ARROW_LEFT, .is_consumer = false},
@@ -204,12 +205,23 @@ void hid_task(void *pvParameters) {
           [BTN_VOL_UP] = {.hid_consumer = HID_USAGE_CONSUMER_VOLUME_INCREMENT,
                           .is_consumer = true},
           [BTN_VOL_DOWN] = {.hid_consumer = HID_USAGE_CONSUMER_VOLUME_DECREMENT,
-                            .is_consumer = true}};
+                            .is_consumer = true},
+          [BTN_F1] = {.hid_button = HID_KEY_ESCAPE,
+                      .modifiers = KEYBOARD_MODIFIER_LEFTCTRL |
+                                   KEYBOARD_MODIFIER_LEFTSHIFT,
+                      .is_consumer = false},
+
+          [BTN_F2] = {.hid_button = HID_KEY_F4,
+                      .modifiers = KEYBOARD_MODIFIER_LEFTALT,
+                      .is_consumer = false},
+          [BTN_F3] = {.hid_button = HID_KEY_F5, .is_consumer = false},
+          [BTN_F4] = {.hid_button = HID_KEY_ESCAPE, .is_consumer = false}};
 
       const struct button_info currentButton = button_to_hid[button_pressed];
       if (!currentButton.is_consumer) {
         ESP_LOGI(TAG, "Sending keypress");
-        app_send_hid_keypress(currentButton.hid_button);
+        app_send_hid_keypress(currentButton.hid_button,
+                              currentButton.modifiers);
       } else {
         ESP_LOGI(TAG, "Sending consumer report");
         app_send_hid_consumer_report(currentButton.hid_consumer);
