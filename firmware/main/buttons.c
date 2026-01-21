@@ -92,10 +92,10 @@ void buttons_init() {
     i_array++;
   }
 
-  const button_id_enum btn_ids[] = {BTN_LEFT, BTN_RIGHT, BTN_UP, BTN_DOWN,
-                                    BTN_ENTER};
+  const button_id_enum btn_ids[] = {BTN_LEFT, BTN_RIGHT, BTN_UP,
+                                    BTN_DOWN, BTN_ENTER, BTN_VOL_UP};
 
-  for (int i = 0; i <= 4; i++) {
+  for (int i = 0; i <= 5; i++) {
     ESP_ERROR_CHECK(iot_button_register_cb(
         button_handles_array[i], BUTTON_PRESS_DOWN, NULL,
         button_single_click_cb, (void *)(intptr_t)btn_ids[i]));

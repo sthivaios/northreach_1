@@ -123,23 +123,37 @@ void tud_resume_cb(void) {
 
 /********* Application ***************/
 
-int failedKeypresses = 0;
+void reset_connection(void) {
+  ESP_LOGW(TAG, "HID not ready. Resetting connection.");
+  tud_disconnect();
+  vTaskDelay(pdMS_TO_TICKS(50));
+  tud_connect();
+}
 
-void app_send_hid_keypress(int key) {
+void app_send_hid_keypress(const int key) {
 
   if (!tud_hid_ready()) {
-    ESP_LOGW(TAG, "HID not ready. The last keypress will be flushed from the "
-                  "queue without being sent.");
-    failedKeypresses++;
-    if (failedKeypresses > 3) {
-      ESP_LOGE(TAG, "Over 3 failed keypresses, HID is messed up. Resetting.");
-      esp_restart();
-    }
+    reset_connection();
+    ESP_LOGW(TAG, "Last button press was flushed.");
     return;
   };
 
-  uint8_t keycode[6] = {key};
+  const uint8_t keycode[6] = {key};
   tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
+  while (!tud_hid_ready()) {
+    vTaskDelay(pdMS_TO_TICKS(1));
+  }
+  tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
+}
+
+void app_send_hid_consumer_report(const int report) {
+  if (!tud_hid_ready()) {
+    reset_connection();
+    ESP_LOGW(TAG, "Last button press was flushed.");
+    return;
+  };
+
+  tud_hid_report(HID_ITF_PROTOCOL_KEYBOARD, 0, report);
   while (!tud_hid_ready()) {
     vTaskDelay(pdMS_TO_TICKS(1));
   }
@@ -162,16 +176,34 @@ void hid_task(void *pvParameters) {
   ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
   ESP_LOGI(TAG, "USB initialization DONE");
 
+  // ReSharper disable once CppDFAEndlessLoop --> makes clion shutup about
+  // "endless loop"
   while (1) {
     while (tud_mounted()) {
       button_id_enum button_pressed;
       xButtonQueueReceive(&button_pressed, portMAX_DELAY);
-      static const uint16_t button_to_hid[11] = {
-          [BTN_LEFT] = HID_KEY_ARROW_LEFT, [BTN_RIGHT] = HID_KEY_ARROW_RIGHT,
-          [BTN_UP] = HID_KEY_ARROW_UP,     [BTN_DOWN] = HID_KEY_ARROW_DOWN,
-          [BTN_ENTER] = HID_KEY_ENTER,
+      struct button_info {
+        uint16_t hid_button;
+        int hid_consumer;
+        bool is_consumer;
       };
-      app_send_hid_keypress(button_to_hid[button_pressed]);
+      const struct button_info button_to_hid[11] = {
+          [BTN_LEFT] = {HID_KEY_ARROW_LEFT, .is_consumer = false},
+          [BTN_RIGHT] = {HID_KEY_ARROW_RIGHT, .is_consumer = false},
+          [BTN_UP] = {HID_KEY_ARROW_UP, .is_consumer = false},
+          [BTN_DOWN] = {HID_KEY_ARROW_DOWN, .is_consumer = false},
+          [BTN_ENTER] = {HID_KEY_ENTER, .is_consumer = false},
+          [BTN_VOL_UP] = {.hid_consumer = HID_USAGE_CONSUMER_VOLUME_INCREMENT,
+                          .is_consumer = true}};
+
+      const struct button_info currentButton = button_to_hid[button_pressed];
+      if (!currentButton.is_consumer) {
+        ESP_LOGI(TAG, "Sending keypress");
+        app_send_hid_keypress(currentButton.hid_button);
+      } else {
+        ESP_LOGI(TAG, "Sending consumer report");
+        app_send_hid_consumer_report(currentButton.hid_consumer);
+      }
     }
   }
 }
