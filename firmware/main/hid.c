@@ -174,8 +174,15 @@ void hid_task(void *pvParameters) {
   tusb_cfg.descriptor.high_speed_config = hid_configuration_descriptor;
 #endif // TUD_OPT_HIGH_SPEED
 
-  ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
+  ESP_ERROR_CHECK(
+      tinyusb_driver_install(&tusb_cfg)); // aborts if not installed properly
   ESP_LOGI(TAG, "USB initialization DONE");
+
+  vTaskDelay(pdMS_TO_TICKS(250));
+  if (!tud_mounted()) {
+    ESP_LOGE(TAG, "Unmounted!");
+    reset_connection();
+  }
 
   // ReSharper disable once CppDFAEndlessLoop --> makes clion shutup about
   // "endless loop"
