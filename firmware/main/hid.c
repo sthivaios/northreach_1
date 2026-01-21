@@ -162,19 +162,14 @@ void hid_task(void *pvParameters)
         while (tud_mounted()) {
             button_id_enum button_pressed;
             xButtonQueueReceive(&button_pressed, portMAX_DELAY);
-            switch (button_pressed) {
-                case BTN_LEFT:
-                    app_send_hid_keypress(HID_KEY_ARROW_LEFT);
-                    break;
-                case BTN_RIGHT:
-                    app_send_hid_keypress(HID_KEY_ARROW_RIGHT);
-                    break;
-                case BTN_ENTER:
-                    app_send_hid_keypress(HID_KEY_ENTER);
-                    break;
-                default:
-                    break;
-            }
+                static const uint16_t button_to_hid[11] = {
+                    [BTN_LEFT]  = HID_KEY_ARROW_LEFT,
+                    [BTN_RIGHT] = HID_KEY_ARROW_RIGHT,
+                    [BTN_UP]    = HID_KEY_ARROW_UP,
+                    [BTN_DOWN]  = HID_KEY_ARROW_DOWN,
+                    [BTN_ENTER] = HID_KEY_ENTER,
+                };
+            app_send_hid_keypress(button_to_hid[button_pressed]);
         }
     }
 
