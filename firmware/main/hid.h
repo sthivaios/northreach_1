@@ -17,4 +17,6 @@
 
 void hid_task(void *pvParameters);
 
+void app_send_hid_demo(void);
+
 #endif // NORTHREACH_1_HID_H
