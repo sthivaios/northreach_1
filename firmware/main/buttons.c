@@ -20,80 +20,82 @@
 #include "button_gpio.h"
 #include "button_types.h"
 #include "esp_log.h"
-#include "hid.h"
 #include "iot_button.h"
 
 static const char *TAG = "button_task";
 
-QueueHandle_t xQueue1;
+QueueHandle_t xButtonEventQueue;
+static button_handle_t button_handles_array [10];
+
+// disgusting stupid array for getting a string from the enums to print to the log
+static const char *button_names[11] = {
+  [BTN_UP]       = "UP",
+  [BTN_DOWN]     = "DOWN",
+  [BTN_LEFT]     = "LEFT",
+  [BTN_RIGHT]    = "RIGHT",
+  [BTN_ENTER]    = "ENTER",
+  [BTN_VOL_UP]   = "VOL_UP",
+  [BTN_VOL_DOWN] = "VOL_DOWN",
+  [BTN_F1]       = "F1",
+  [BTN_F2]       = "F2",
+  [BTN_F3]       = "F3",
+  [BTN_F4]       = "F4",
+};
 
 BaseType_t xButtonQueueReceive(button_id_enum *ButtonID, const TickType_t xTicksToWait) {
-  if (!xQueue1 || ButtonID == NULL) {
+  if (!xButtonEventQueue || ButtonID == NULL) {
     return pdFAIL;
   }
-  return xQueueReceive(xQueue1, ButtonID, xTicksToWait);
+  return xQueueReceive(xButtonEventQueue, ButtonID, xTicksToWait);
 }
 
 BaseType_t xButtonQueueSend(button_id_enum ButtonID, const TickType_t xTicksToWait) {
-  if (!xQueue1) {
+  if (!xButtonEventQueue) {
     return pdFAIL;
   }
-  return xQueueSend(xQueue1, &ButtonID, xTicksToWait);
+  return xQueueSend(xButtonEventQueue, &ButtonID, xTicksToWait);
 }
 
 void button_single_click_cb(void *arg,void *usr_data)
 {
-  button_id_enum btn_id = (button_id_enum)(intptr_t)usr_data;
-  ESP_LOGI(TAG, "Click event");
+  const button_id_enum btn_id = (button_id_enum)(intptr_t)usr_data;
+  ESP_LOGI(TAG, "Click event from button: %s", button_names[btn_id]);
   xButtonQueueSend(btn_id, portMAX_DELAY);
 }
 
 void buttons_init() {
 
-  // create gpio 02 button
-  const button_config_t btn02_cfg = {0};
-  const button_gpio_config_t btn02_gpio_cfg = {
-    .gpio_num = 2,
-    .active_level = 0,
-  };
-  button_handle_t gpio02_btn = NULL;
-  iot_button_new_gpio_device(&btn02_cfg, &btn02_gpio_cfg, &gpio02_btn);
-  if(NULL == gpio02_btn) {
-    ESP_LOGE(TAG, "Button 02 create failed");
+  int i_pin = 2;
+  int i_array = 0;
+
+  while (i_pin <= 11) {
+    const button_config_t btn_cfg = {0};
+    const button_gpio_config_t btn_gpio_cfg = {
+      .gpio_num = i_pin,
+      .active_level = 0,
+    };
+    button_handle_t gpio_btn = NULL;
+    ESP_ERROR_CHECK(iot_button_new_gpio_device(&btn_cfg, &btn_gpio_cfg, &gpio_btn));
+    if(NULL == gpio_btn) {
+      ESP_LOGE(TAG, "Button [ %d ] create failed", i_pin);
+      abort();
+    }
+
+    button_handles_array[i_array] = gpio_btn;
+
+    ESP_LOGI(TAG, "Button [ %d ] configured", i_pin);
+
+    i_pin++;
+    i_array++;
   }
 
-  // create gpio 03 button
-  const button_config_t btn03_cfg = {0};
-  const button_gpio_config_t btn03_gpio_cfg = {
-    .gpio_num = 3,
-    .active_level = 0,
-  };
-  button_handle_t gpio03_btn = NULL;
-  iot_button_new_gpio_device(&btn03_cfg, &btn03_gpio_cfg, &gpio03_btn);
-  if(NULL == gpio03_btn) {
-    ESP_LOGE(TAG, "Button 03 create failed");
+  const button_id_enum btn_ids [] = {BTN_LEFT, BTN_RIGHT, BTN_UP, BTN_DOWN, BTN_ENTER};
+
+  for (int i = 0; i <= 4; i++) {
+    ESP_ERROR_CHECK(iot_button_register_cb(button_handles_array[i], BUTTON_PRESS_DOWN, NULL, button_single_click_cb,(void *)(intptr_t)btn_ids[i]));
+    ESP_ERROR_CHECK(iot_button_register_cb(button_handles_array[i], BUTTON_LONG_PRESS_HOLD, NULL, button_single_click_cb,(void *)(intptr_t)btn_ids[i]));
+    ESP_LOGI(TAG, "Registered callbacks for button [ %d ]", i+2);
   }
-
-  // create gpio 06 button
-  const button_config_t btn06_cfg = {0};
-  const button_gpio_config_t btn06_gpio_cfg = {
-    .gpio_num = 6,
-    .active_level = 0,
-  };
-  button_handle_t gpio06_btn = NULL;
-  iot_button_new_gpio_device(&btn06_cfg, &btn06_gpio_cfg, &gpio06_btn);
-  if(NULL == gpio06_btn) {
-    ESP_LOGE(TAG, "Button 06 create failed");
-  }
-
-  iot_button_register_cb(gpio02_btn, BUTTON_PRESS_DOWN, NULL, button_single_click_cb,(void *)(intptr_t)BTN_LEFT);
-  iot_button_register_cb(gpio02_btn, BUTTON_LONG_PRESS_HOLD, NULL, button_single_click_cb,(void *)(intptr_t)BTN_LEFT);
-
-  iot_button_register_cb(gpio03_btn, BUTTON_PRESS_DOWN, NULL, button_single_click_cb,(void *)(intptr_t)BTN_RIGHT);
-  iot_button_register_cb(gpio03_btn, BUTTON_LONG_PRESS_HOLD, NULL, button_single_click_cb,(void *)(intptr_t)BTN_RIGHT);
-
-  iot_button_register_cb(gpio06_btn, BUTTON_PRESS_DOWN, NULL, button_single_click_cb,(void *)(intptr_t)BTN_ENTER);
-  iot_button_register_cb(gpio06_btn, BUTTON_LONG_PRESS_HOLD, NULL, button_single_click_cb,(void *)(intptr_t)BTN_ENTER);
 
 }
 
@@ -102,16 +104,13 @@ void buttonTask( void *pvParameters )
 
   buttons_init();
 
-  xQueue1 = xQueueCreate(10, sizeof( button_id_enum ));
-  if (xQueue1 == NULL) {
-    ESP_LOGE(TAG, "Queue not created successfully... Fatal error, aborting!");
+  xButtonEventQueue = xQueueCreate(50, sizeof( button_id_enum ));
+  if (xButtonEventQueue == NULL) {
+    ESP_LOGE(TAG, "The button event queue was not created successfully! This is a fatal error. Aborting!");
     abort();
   }
 
-  while (1) {
-
-    vTaskDelay( pdMS_TO_TICKS(1000) );
-
-  }
+  ESP_LOGW(TAG, "Buttons configured successfully in the button task. The task will now self delete.");
+  vTaskDelete(NULL);
 
 }
