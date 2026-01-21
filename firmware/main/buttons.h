@@ -15,9 +15,7 @@
 #ifndef NORTHREACH_1_BUTTONS_H
 #define NORTHREACH_1_BUTTONS_H
 
-
 #include "freertos/FreeRTOS.h"
-
 
 typedef enum {
   BTN_UP,
@@ -33,8 +31,9 @@ typedef enum {
   BTN_F4,
 } button_id_enum;
 
-void buttonTask( void *pvParameters );
+void buttonTask(void *pvParameters);
 
-BaseType_t xButtonQueueReceive(button_id_enum *ButtonID, const TickType_t xTicksToWait);
+BaseType_t xButtonQueueReceive(button_id_enum *ButtonID,
+                               TickType_t xTicksToWait);
 
 #endif // NORTHREACH_1_BUTTONS_H

@@ -25,39 +25,41 @@
 static const char *TAG = "button_task";
 
 QueueHandle_t xButtonEventQueue;
-static button_handle_t button_handles_array [10];
+static button_handle_t button_handles_array[10];
 
-// disgusting stupid array for getting a string from the enums to print to the log
+// disgusting stupid array for getting a string from the enums to print to the
+// log
 static const char *button_names[11] = {
-  [BTN_UP]       = "UP",
-  [BTN_DOWN]     = "DOWN",
-  [BTN_LEFT]     = "LEFT",
-  [BTN_RIGHT]    = "RIGHT",
-  [BTN_ENTER]    = "ENTER",
-  [BTN_VOL_UP]   = "VOL_UP",
-  [BTN_VOL_DOWN] = "VOL_DOWN",
-  [BTN_F1]       = "F1",
-  [BTN_F2]       = "F2",
-  [BTN_F3]       = "F3",
-  [BTN_F4]       = "F4",
+    [BTN_UP] = "UP",
+    [BTN_DOWN] = "DOWN",
+    [BTN_LEFT] = "LEFT",
+    [BTN_RIGHT] = "RIGHT",
+    [BTN_ENTER] = "ENTER",
+    [BTN_VOL_UP] = "VOL_UP",
+    [BTN_VOL_DOWN] = "VOL_DOWN",
+    [BTN_F1] = "F1",
+    [BTN_F2] = "F2",
+    [BTN_F3] = "F3",
+    [BTN_F4] = "F4",
 };
 
-BaseType_t xButtonQueueReceive(button_id_enum *ButtonID, const TickType_t xTicksToWait) {
+BaseType_t xButtonQueueReceive(button_id_enum *ButtonID,
+                               const TickType_t xTicksToWait) {
   if (!xButtonEventQueue || ButtonID == NULL) {
     return pdFAIL;
   }
   return xQueueReceive(xButtonEventQueue, ButtonID, xTicksToWait);
 }
 
-BaseType_t xButtonQueueSend(button_id_enum ButtonID, const TickType_t xTicksToWait) {
+BaseType_t xButtonQueueSend(button_id_enum ButtonID,
+                            const TickType_t xTicksToWait) {
   if (!xButtonEventQueue) {
     return pdFAIL;
   }
   return xQueueSend(xButtonEventQueue, &ButtonID, xTicksToWait);
 }
 
-void button_single_click_cb(void *arg,void *usr_data)
-{
+void button_single_click_cb(void *arg, void *usr_data) {
   const button_id_enum btn_id = (button_id_enum)(intptr_t)usr_data;
   ESP_LOGI(TAG, "Click event from button: %s", button_names[btn_id]);
   xButtonQueueSend(btn_id, portMAX_DELAY);
@@ -71,12 +73,13 @@ void buttons_init() {
   while (i_pin <= 11) {
     const button_config_t btn_cfg = {0};
     const button_gpio_config_t btn_gpio_cfg = {
-      .gpio_num = i_pin,
-      .active_level = 0,
+        .gpio_num = i_pin,
+        .active_level = 0,
     };
     button_handle_t gpio_btn = NULL;
-    ESP_ERROR_CHECK(iot_button_new_gpio_device(&btn_cfg, &btn_gpio_cfg, &gpio_btn));
-    if(NULL == gpio_btn) {
+    ESP_ERROR_CHECK(
+        iot_button_new_gpio_device(&btn_cfg, &btn_gpio_cfg, &gpio_btn));
+    if (NULL == gpio_btn) {
       ESP_LOGE(TAG, "Button [ %d ] create failed", i_pin);
       abort();
     }
@@ -89,28 +92,32 @@ void buttons_init() {
     i_array++;
   }
 
-  const button_id_enum btn_ids [] = {BTN_LEFT, BTN_RIGHT, BTN_UP, BTN_DOWN, BTN_ENTER};
+  const button_id_enum btn_ids[] = {BTN_LEFT, BTN_RIGHT, BTN_UP, BTN_DOWN,
+                                    BTN_ENTER};
 
   for (int i = 0; i <= 4; i++) {
-    ESP_ERROR_CHECK(iot_button_register_cb(button_handles_array[i], BUTTON_PRESS_DOWN, NULL, button_single_click_cb,(void *)(intptr_t)btn_ids[i]));
-    ESP_ERROR_CHECK(iot_button_register_cb(button_handles_array[i], BUTTON_LONG_PRESS_HOLD, NULL, button_single_click_cb,(void *)(intptr_t)btn_ids[i]));
-    ESP_LOGI(TAG, "Registered callbacks for button [ %d ]", i+2);
+    ESP_ERROR_CHECK(iot_button_register_cb(
+        button_handles_array[i], BUTTON_PRESS_DOWN, NULL,
+        button_single_click_cb, (void *)(intptr_t)btn_ids[i]));
+    ESP_ERROR_CHECK(iot_button_register_cb(
+        button_handles_array[i], BUTTON_LONG_PRESS_HOLD, NULL,
+        button_single_click_cb, (void *)(intptr_t)btn_ids[i]));
+    ESP_LOGI(TAG, "Registered callbacks for button [ %d ]", i + 2);
   }
-
 }
 
-void buttonTask( void *pvParameters )
-{
+void buttonTask(void *pvParameters) {
 
   buttons_init();
 
-  xButtonEventQueue = xQueueCreate(50, sizeof( button_id_enum ));
+  xButtonEventQueue = xQueueCreate(50, sizeof(button_id_enum));
   if (xButtonEventQueue == NULL) {
-    ESP_LOGE(TAG, "The button event queue was not created successfully! This is a fatal error. Aborting!");
+    ESP_LOGE(TAG, "The button event queue was not created successfully! This "
+                  "is a fatal error. Aborting!");
     abort();
   }
 
-  ESP_LOGW(TAG, "Buttons configured successfully in the button task. The task will now self delete.");
+  ESP_LOGW(TAG, "Buttons configured successfully in the button task. The task "
+                "will now self delete.");
   vTaskDelete(NULL);
-
 }
