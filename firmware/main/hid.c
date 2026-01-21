@@ -32,7 +32,7 @@ static const char *TAG = "hid_task";
 // HID report descriptor
 const uint8_t hid_report_descriptor[] = {
     TUD_HID_REPORT_DESC_KEYBOARD(HID_REPORT_ID(HID_ITF_PROTOCOL_KEYBOARD)),
-};
+    TUD_HID_REPORT_DESC_CONSUMER(HID_REPORT_ID(2))};
 
 // string descriptor
 const char *hid_string_descriptor[5] = {
@@ -146,18 +146,19 @@ void app_send_hid_keypress(const int key) {
   tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
 }
 
-void app_send_hid_consumer_report(const int report) {
+void app_send_hid_consumer_report(const uint16_t report) {
   if (!tud_hid_ready()) {
     reset_connection();
     ESP_LOGW(TAG, "Last button press was flushed.");
     return;
   };
 
-  tud_hid_report(HID_ITF_PROTOCOL_KEYBOARD, 0, report);
+  tud_hid_report(2, &report, sizeof(report));
   while (!tud_hid_ready()) {
     vTaskDelay(pdMS_TO_TICKS(1));
   }
-  tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
+  const uint16_t release = 0;
+  tud_hid_report(2, &release, sizeof(release));
 }
 
 void hid_task(void *pvParameters) {
@@ -184,7 +185,7 @@ void hid_task(void *pvParameters) {
       xButtonQueueReceive(&button_pressed, portMAX_DELAY);
       struct button_info {
         uint16_t hid_button;
-        int hid_consumer;
+        uint16_t hid_consumer;
         bool is_consumer;
       };
       const struct button_info button_to_hid[11] = {
@@ -194,7 +195,9 @@ void hid_task(void *pvParameters) {
           [BTN_DOWN] = {HID_KEY_ARROW_DOWN, .is_consumer = false},
           [BTN_ENTER] = {HID_KEY_ENTER, .is_consumer = false},
           [BTN_VOL_UP] = {.hid_consumer = HID_USAGE_CONSUMER_VOLUME_INCREMENT,
-                          .is_consumer = true}};
+                          .is_consumer = true},
+          [BTN_VOL_DOWN] = {.hid_consumer = HID_USAGE_CONSUMER_VOLUME_DECREMENT,
+                            .is_consumer = true}};
 
       const struct button_info currentButton = button_to_hid[button_pressed];
       if (!currentButton.is_consumer) {
