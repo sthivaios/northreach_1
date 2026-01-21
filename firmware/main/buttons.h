@@ -27,10 +27,10 @@ typedef enum {
   BTN_ENTER,
   BTN_VOL_UP,
   BTN_VOL_DOWN,
-  BTN_ESC,
-  BTN_F5,
-  BTN_ALT_F4,
-  BTN_TASK_MGR,
+  BTN_F1,
+  BTN_F2,
+  BTN_F3,
+  BTN_F4,
 } button_id_enum;
 
 void buttonTask( void *pvParameters );
