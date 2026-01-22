@@ -11855,7 +11855,7 @@
 		(layer "Edge.Cuts")
 		(uuid "fba4ed42-3d6d-45ff-a35e-f9446713fa0e")
 	)
-	(gr_text "NorthReach 1 - v1\nStratos Thivaios (C) 2025"
+	(gr_text "NorthReach 1 - v1\nStratos Thivaios (C) 2026"
 		(at 148 50 0)
 		(layer "F.SilkS")
 		(uuid "5045eca6-3438-4c3f-8f99-3031bcec31be")
@@ -11880,7 +11880,7 @@
 			(justify bottom mirror)
 		)
 	)
-	(gr_text "NorthReach 1 - Button Board\nv1 - Designed on Jan. 8th 2025\nin Athens, Greece\nStratos Thivaios (C) 2025"
+	(gr_text "NorthReach 1 - Button Board\nv1 - Designed on Jan. 8th 2026\nin Athens, Greece\nStratos Thivaios (C) 2026"
 		(at 148 134 0)
 		(layer "B.SilkS")
 		(uuid "cbbc2cc2-2a91-48d1-9c5f-2986a49488ec")
