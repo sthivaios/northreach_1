@@ -9,7 +9,7 @@
 	(paper "A4")
 	(title_block
 		(title "NorthReach 1 - Motherboard")
-		(date "2026-01-22")
+		(date "2026-01-24")
 		(rev "v1.0")
 		(company "Stratos Thivaios")
 		(comment 1 "CERN Open Hardware License v2 - Strongly Reciprocal")
@@ -13746,7 +13746,7 @@
 		(layer "Edge.Cuts")
 		(uuid "f2bfd789-0c84-4ad7-b2f5-5bfb88439b3d")
 	)
-	(gr_text "NorthReach 1 - Motherboard\nv1 - Designed on Jan. 22, 2026\nin Athens, Greece\nStratos Thivaios (C) 2026"
+	(gr_text "NorthReach 1 - Motherboard\nv1 - Designed on Jan. 24, 2026\nin Athens, Greece\nStratos Thivaios (C) 2026"
 		(at 153.15 69.2 0)
 		(layer "F.SilkS")
 		(uuid "345ba5ae-3fa2-4954-beb9-527eb38e92e6")
@@ -13783,14 +13783,15 @@
 		)
 	)
 	(gr_text "Pinout for the debug\nheaders J2 and J4"
-		(at 167.35 77.3 0)
+		(at 172.6 77.6 0)
 		(layer "F.SilkS")
 		(uuid "5cb9758b-b1ee-4304-bd0a-f556faa9aac9")
 		(effects
 			(font
-				(size 0.65 0.65)
+				(size 0.8 0.8)
 				(thickness 0.1)
 			)
+			(justify right)
 		)
 	)
 	(gr_text "(EN)"
@@ -13836,109 +13837,117 @@
 			)
 		)
 		(column_widths 3.825 5.8)
-		(row_heights 2.25 2 2 2)
+		(row_heights 3 2 2 2)
 		(cells
 			(table_cell "J2"
-				(start 162.5375 78.575)
-				(end 166.3625 80.825)
+				(start 162.7875 79.4)
+				(end 166.6125 82.4)
 				(margins 1.0025 1.0025 1.0025 1.0025)
 				(span 1 1)
 				(layer "F.SilkS")
 				(uuid "34c4eb11-594b-4569-8d2c-c89bd067daeb")
 				(effects
 					(font
-						(size 1 1)
+						(size 0.8 0.8)
+						(thickness 0.15)
 					)
 				)
 			)
 			(table_cell "J4 (UART)"
-				(start 166.3625 78.575)
-				(end 172.1625 80.825)
+				(start 166.6125 79.4)
+				(end 172.4125 82.4)
 				(margins 1.0025 1.0025 1.0025 1.0025)
 				(span 1 1)
 				(layer "F.SilkS")
 				(uuid "95b9fb38-5100-4d7b-9ea6-c2bc6ea6c4ae")
 				(effects
 					(font
-						(size 0.6 0.6)
+						(size 0.8 0.8)
+						(thickness 0.15)
 					)
 				)
 			)
 			(table_cell "GND"
-				(start 162.5375 80.825)
-				(end 166.3625 82.825)
+				(start 162.7875 82.4)
+				(end 166.6125 84.4)
 				(margins 1.0025 1.0025 1.0025 1.0025)
 				(span 1 1)
 				(layer "F.SilkS")
 				(uuid "74b885b2-8d5e-4941-9a69-a432fe4d68d9")
 				(effects
 					(font
-						(size 0.7 0.7)
+						(size 0.8 0.8)
+						(thickness 0.08)
 					)
 				)
 			)
 			(table_cell "GND"
-				(start 166.3625 80.825)
-				(end 172.1625 82.825)
+				(start 166.6125 82.4)
+				(end 172.4125 84.4)
 				(margins 1.0025 1.0025 1.0025 1.0025)
 				(span 1 1)
 				(layer "F.SilkS")
 				(uuid "d6083102-65be-4d04-92a4-447f8b77dd18")
 				(effects
 					(font
-						(size 0.7 0.7)
+						(size 0.8 0.8)
+						(thickness 0.08)
 					)
 				)
 			)
 			(table_cell "VBUS"
-				(start 162.5375 82.825)
-				(end 166.3625 84.825)
+				(start 162.7875 84.4)
+				(end 166.6125 86.4)
 				(margins 1.0025 1.0025 1.0025 1.0025)
 				(span 1 1)
 				(layer "F.SilkS")
 				(uuid "6d7342cc-fa9a-449e-87b7-3b8bbf6a9639")
 				(effects
 					(font
-						(size 0.7 0.7)
+						(size 0.8 0.8)
+						(thickness 0.08)
 					)
 				)
 			)
 			(table_cell "UART_TXD"
-				(start 166.3625 82.825)
-				(end 172.1625 84.825)
+				(start 166.6125 84.4)
+				(end 172.4125 86.4)
 				(margins 1.0025 1.0025 1.0025 1.0025)
 				(span 1 1)
 				(layer "F.SilkS")
 				(uuid "8cfb5a3e-dcd0-47c3-966d-d06c21f3e536")
 				(effects
 					(font
-						(size 0.7 0.7)
+						(size 0.8 0.75)
+						(thickness 0.08)
 					)
 				)
 			)
 			(table_cell "VDD"
-				(start 162.5375 84.825)
-				(end 166.3625 86.825)
+				(start 162.7875 86.4)
+				(end 166.6125 88.4)
 				(margins 1.0025 1.0025 1.0025 1.0025)
 				(span 1 1)
 				(layer "F.SilkS")
 				(uuid "bd62099a-4c17-44cf-8114-6085059ecd9e")
 				(effects
 					(font
-						(size 0.7 0.7)
+						(size 0.8 0.8)
+						(thickness 0.08)
 					)
 				)
 			)
 			(table_cell "UART_RXD"
-				(start 166.3625 84.825)
-				(end 172.1625 86.825)
+				(start 166.6125 86.4)
+				(end 172.4125 88.4)
 				(margins 1.0025 1.0025 1.0025 1.0025)
 				(span 1 1)
 				(layer "F.SilkS")
 				(uuid "ea4774aa-2a07-4ee5-aaee-f073cf21e7e4")
 				(effects
 					(font
-						(size 0.7 0.7)
+						(size 0.8 0.75)
+						(thickness 0.08)
 					)
 				)
 			)
@@ -14015,14 +14024,6 @@
 		(layer "F.Cu")
 		(net 1)
 		(uuid "17de7745-8d84-4e4c-a1cc-70f48e288479")
-	)
-	(segment
-		(start 155.2 133.6)
-		(end 154.087501 133.6)
-		(width 0.3)
-		(layer "F.Cu")
-		(net 1)
-		(uuid "19c9c57c-c765-4b39-8496-a44ac1af57f5")
 	)
 	(segment
 		(start 155.81 139.24)
@@ -14289,20 +14290,20 @@
 		(uuid "6db6e932-04e5-4683-b509-a6a8f14835ef")
 	)
 	(segment
-		(start 153.55 134.137501)
-		(end 153.55 134.8)
-		(width 0.3)
-		(layer "F.Cu")
-		(net 1)
-		(uuid "730027d7-e4d7-42ef-8b26-e55f4069ab69")
-	)
-	(segment
 		(start 158.6 138.35)
 		(end 158.12 138.35)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 1)
 		(uuid "74fff5d7-1701-4288-bd6c-61d0099300ac")
+	)
+	(segment
+		(start 154.087501 133.6)
+		(end 153.55 134.137501)
+		(width 0.3)
+		(layer "F.Cu")
+		(net 1)
+		(uuid "75980027-063c-4cad-ae95-0a14ac53e50f")
 	)
 	(segment
 		(start 149.7 106.55)
@@ -14497,14 +14498,6 @@
 		(uuid "da118cb2-010a-40c4-94ad-900972991420")
 	)
 	(segment
-		(start 154.087501 133.6)
-		(end 153.55 134.137501)
-		(width 0.3)
-		(layer "F.Cu")
-		(net 1)
-		(uuid "dfc8f78f-e7d3-4259-856a-a7b8f47f13a0")
-	)
-	(segment
 		(start 164.45 108.54)
 		(end 164.45 108)
 		(width 0.3)
@@ -14543,6 +14536,14 @@
 		(layer "F.Cu")
 		(net 1)
 		(uuid "e40b892f-4160-4a22-a375-a96676a69432")
+	)
+	(segment
+		(start 153.55 134.137501)
+		(end 153.55 134.8)
+		(width 0.3)
+		(layer "F.Cu")
+		(net 1)
+		(uuid "ed775425-6c28-4d33-82e3-5f2eca000fa7")
 	)
 	(segment
 		(start 135.02 88.35)
@@ -14631,6 +14632,14 @@
 		(layer "F.Cu")
 		(net 1)
 		(uuid "fe8c1686-d396-4215-b415-dd415335b674")
+	)
+	(segment
+		(start 155.2 133.6)
+		(end 154.087501 133.6)
+		(width 0.3)
+		(layer "F.Cu")
+		(net 1)
+		(uuid "fe9aab7a-72d2-4b50-8237-df8f11ef3a91")
 	)
 	(segment
 		(start 139.401 79.35752)
