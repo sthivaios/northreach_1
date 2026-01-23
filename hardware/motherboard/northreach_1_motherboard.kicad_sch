@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "NorthReach 1 - Motherboard")
-		(date "2026-01-08")
+		(date "2026-01-24")
 		(rev "v1.0")
 		(company "Stratos Thivaios")
 		(comment 1 "CERN Open Hardware License v2 - Strongly Reciprocal")
@@ -4965,6 +4965,19 @@
 		(uuid 93c89d46-3eaf-4375-b96c-0ee519ff009a)
 	)
 	(rectangle
+		(start 68.58 58.42)
+		(end 104.14 83.82)
+		(stroke
+			(width 0)
+			(type dash_dot)
+			(color 0 1 255 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid a5b08dd0-612c-496a-b886-c7eeec848e64)
+	)
+	(rectangle
 		(start 17.78 132.08)
 		(end 90.17 191.77)
 		(stroke
@@ -5076,6 +5089,16 @@
 			(justify left)
 		)
 		(uuid "9602f154-6691-49a3-a2de-959ef8c0f90c")
+	)
+	(text "ESD Protection"
+		(exclude_from_sim no)
+		(at 97.028 56.896 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "bb8d598c-b8ea-4606-acd5-06443f53e865")
 	)
 	(text "USB-C Port"
 		(exclude_from_sim no)
@@ -10515,10 +10538,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "b9e6fd0e-c987-4ced-adbb-1b46a22c26d6")
 		(property "Reference" "U3"
-			(at 79.1211 62.23 0)
+			(at 80.264 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10527,7 +10549,7 @@
 			)
 		)
 		(property "Value" "USBLC6-2SC6"
-			(at 79.1211 64.77 0)
+			(at 80.264 65.532 0)
 			(effects
 				(font
 					(size 1.27 1.27)
