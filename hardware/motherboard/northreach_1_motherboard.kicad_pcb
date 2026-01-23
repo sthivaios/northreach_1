@@ -10,7 +10,7 @@
 	(title_block
 		(title "NorthReach 1 - Motherboard")
 		(date "2026-01-24")
-		(rev "v2.0")
+		(rev "v2.1")
 		(company "Stratos Thivaios")
 		(comment 1 "CERN Open Hardware License v2 - Strongly Reciprocal")
 		(comment 2 "Copyright © 2026 Stratos Thivaios")
@@ -3972,6 +3972,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C7519"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7122ff0f-b54f-4988-a94f-34b816dd7cf0")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
