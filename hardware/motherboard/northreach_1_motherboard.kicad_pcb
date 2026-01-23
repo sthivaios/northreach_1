@@ -13759,12 +13759,12 @@
 		(uuid "f2bfd789-0c84-4ad7-b2f5-5bfb88439b3d")
 	)
 	(gr_text "NorthReach 1 - Motherboard\nv1 - Designed on Jan. 24, 2026\nin Athens, Greece\nStratos Thivaios (C) 2026"
-		(at 153.15 69.2 0)
+		(at 153 70 0)
 		(layer "F.SilkS")
 		(uuid "345ba5ae-3fa2-4954-beb9-527eb38e92e6")
 		(effects
 			(font
-				(size 0.9 0.9)
+				(size 1.2 1.2)
 				(thickness 0.1)
 			)
 			(justify bottom)
@@ -13818,12 +13818,12 @@
 		)
 	)
 	(gr_text "github.com/sthivaios/northreach_1\nCERN Open Hardware Licence Version 2 - CERN-OHL-S"
-		(at 153.15 72.9 -0)
+		(at 153 74 0)
 		(layer "F.SilkS")
 		(uuid "dfa1b8cf-c25f-49b1-9291-04d618d15d58")
 		(effects
 			(font
-				(size 0.8 0.8)
+				(size 1 0.9)
 				(thickness 0.1)
 			)
 			(justify bottom)
