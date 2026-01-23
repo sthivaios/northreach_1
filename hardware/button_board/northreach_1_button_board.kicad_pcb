@@ -11869,12 +11869,12 @@
 		)
 	)
 	(gr_text "github.com/sthivaios/northreach_1\nCERN Open Hardware Licence Version 2 - CERN-OHL-S"
-		(at 148 140.5 0)
+		(at 166.4 101.2 90)
 		(layer "B.SilkS")
 		(uuid "658e59e6-82b4-4c40-aa23-bba44493cd13")
 		(effects
 			(font
-				(size 0.8 0.8)
+				(size 1.2 1.2)
 				(thickness 0.1)
 			)
 			(justify bottom mirror)
