@@ -10,7 +10,7 @@
 	(title_block
 		(title "NorthReach 1 - Button board")
 		(date "2026-01-24")
-		(rev "v1.3")
+		(rev "v1.4")
 		(company "Stratos Thivaios")
 		(comment 1 "CERN Open Hardware License v2 - Strongly Reciprocal")
 		(comment 2 "Copyright © 2026 Stratos Thivaios")
