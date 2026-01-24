@@ -4,7 +4,7 @@
 	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "SW**"
-		(at 0 5.75 0)
+		(at 0 -5.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "6f95aa6e-f14e-461c-bb77-932669214a7a")
@@ -19,6 +19,7 @@
 		(at -0.5 7.25 0)
 		(unlocked yes)
 		(layer "F.Fab")
+		(hide yes)
 		(uuid "05256ac6-d40a-4622-893f-e2b7aa8f5897")
 		(effects
 			(font
@@ -107,132 +108,6 @@
 		(layer "F.CrtYd")
 		(uuid "f6e63b40-3e82-4290-b921-a2a7fad219ba")
 	)
-	(fp_text user "${REFERENCE}"
-		(at -0.5 8.75 0)
-		(unlocked yes)
-		(layer "F.Fab")
-		(uuid "fd7e4f3b-c7f7-45a7-9f17-f0fa60fb7494")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(dimension
-		(type orthogonal)
-		(layer "Dwgs.User")
-		(uuid "33d70695-197b-46ca-a4fd-2f560d48d586")
-		(pts
-			(xy -4 -2.25) (xy 4 -2.25)
-		)
-		(height -3.75)
-		(orientation 0)
-		(format
-			(prefix "")
-			(suffix "")
-			(units 3)
-			(units_format 0)
-			(precision 4)
-			(suppress_zeroes yes)
-		)
-		(style
-			(thickness 0.1)
-			(arrow_length 1.27)
-			(text_position_mode 0)
-			(arrow_direction outward)
-			(extension_height 0.58642)
-			(extension_offset 0.5)
-			(keep_text_aligned yes)
-		)
-		(gr_text "8"
-			(at 0 -7.15 0)
-			(layer "Dwgs.User")
-			(uuid "33d70695-197b-46ca-a4fd-2f560d48d586")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-	)
-	(dimension
-		(type orthogonal)
-		(layer "Dwgs.User")
-		(uuid "3ef93553-67cc-420a-b63b-b2d0e61c6a9d")
-		(pts
-			(xy 4 -2.25) (xy 4 2.25)
-		)
-		(height 3.5)
-		(orientation 1)
-		(format
-			(prefix "")
-			(suffix "")
-			(units 3)
-			(units_format 0)
-			(precision 4)
-			(suppress_zeroes yes)
-		)
-		(style
-			(thickness 0.1)
-			(arrow_length 1.27)
-			(text_position_mode 0)
-			(arrow_direction outward)
-			(extension_height 0.58642)
-			(extension_offset 0.5)
-			(keep_text_aligned yes)
-		)
-		(gr_text "4.5"
-			(at 6.35 0 90)
-			(layer "Dwgs.User")
-			(uuid "3ef93553-67cc-420a-b63b-b2d0e61c6a9d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-	)
-	(dimension
-		(type orthogonal)
-		(layer "Dwgs.User")
-		(uuid "ebee85c5-b352-452c-bdc2-858a742bfee0")
-		(pts
-			(xy -4 2.25) (xy -4 -2.25)
-		)
-		(height -3)
-		(orientation 1)
-		(format
-			(prefix "")
-			(suffix "")
-			(units 3)
-			(units_format 0)
-			(precision 4)
-			(suppress_zeroes yes)
-		)
-		(style
-			(thickness 0.1)
-			(arrow_length 1.27)
-			(text_position_mode 0)
-			(arrow_direction outward)
-			(extension_height 0.58642)
-			(extension_offset 0.5)
-			(keep_text_aligned yes)
-		)
-		(gr_text "4.5"
-			(at -8.15 0 90)
-			(layer "Dwgs.User")
-			(uuid "ebee85c5-b352-452c-bdc2-858a742bfee0")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-	)
 	(pad "1" thru_hole circle
 		(at -4 -2.25)
 		(size 2 2)
@@ -264,12 +139,6 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "dd535081-0555-427c-b1ea-8285c2cf5047")
-	)
-	(group ""
-		(uuid "96dba433-0801-4630-a60a-42ea8f287b38")
-		(members "18be4f50-46cc-4154-b7ef-62d019571e41" "3ef93553-67cc-420a-b63b-b2d0e61c6a9d"
-			"dd535081-0555-427c-b1ea-8285c2cf5047"
-		)
 	)
 	(embedded_fonts no)
 )
