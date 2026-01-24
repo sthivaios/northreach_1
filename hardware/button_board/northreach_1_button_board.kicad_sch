@@ -2450,7 +2450,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 74.93 0)
 			(effects
 				(font
@@ -2518,7 +2518,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 86.36 0)
 			(effects
 				(font
@@ -2586,7 +2586,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 120.65 0)
 			(effects
 				(font
@@ -2786,7 +2786,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 120.65 0)
 			(effects
 				(font
@@ -2854,7 +2854,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 74.93 0)
 			(effects
 				(font
@@ -3517,7 +3517,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 109.22 0)
 			(effects
 				(font
@@ -3850,7 +3850,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 148.59 133.35 0)
 			(effects
 				(font
@@ -3984,7 +3984,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 86.36 0)
 			(effects
 				(font
@@ -4316,7 +4316,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 97.79 0)
 			(effects
 				(font
@@ -4450,7 +4450,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 97.79 0)
 			(effects
 				(font
@@ -4584,7 +4584,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 109.22 0)
 			(effects
 				(font
