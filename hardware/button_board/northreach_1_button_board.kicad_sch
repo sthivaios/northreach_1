@@ -2434,7 +2434,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "046e406c-e6a5-4316-b000-3570a989455c")
-		(property "Reference" "SW5"
+		(property "Reference" "SW3"
 			(at 166.37 72.39 0)
 			(effects
 				(font
@@ -2450,7 +2450,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 74.93 0)
 			(effects
 				(font
@@ -2486,7 +2486,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW5")
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -2502,7 +2502,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "137f40be-237b-4968-8077-4bb86980ac58")
-		(property "Reference" "SW4"
+		(property "Reference" "SW2"
 			(at 132.08 83.82 0)
 			(effects
 				(font
@@ -2518,7 +2518,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 86.36 0)
 			(effects
 				(font
@@ -2554,7 +2554,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW4")
+					(reference "SW2")
 					(unit 1)
 				)
 			)
@@ -2570,7 +2570,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "18e3c02e-dc33-4e3e-9d36-e0ff83760c72")
-		(property "Reference" "SW6"
+		(property "Reference" "SW10"
 			(at 166.37 118.11 0)
 			(effects
 				(font
@@ -2586,7 +2586,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 120.65 0)
 			(effects
 				(font
@@ -2622,7 +2622,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW6")
+					(reference "SW10")
 					(unit 1)
 				)
 			)
@@ -2770,7 +2770,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2102856b-a297-4ae9-84ca-5153bafaabb3")
-		(property "Reference" "SW13"
+		(property "Reference" "SW9"
 			(at 132.08 118.11 0)
 			(effects
 				(font
@@ -2786,7 +2786,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 120.65 0)
 			(effects
 				(font
@@ -2822,7 +2822,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW13")
+					(reference "SW9")
 					(unit 1)
 				)
 			)
@@ -2838,7 +2838,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2b1b12b3-04a7-44a5-af99-c30b9ad5abfa")
-		(property "Reference" "SW3"
+		(property "Reference" "SW1"
 			(at 132.08 72.39 0)
 			(effects
 				(font
@@ -2854,7 +2854,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 74.93 0)
 			(effects
 				(font
@@ -2890,7 +2890,7 @@
 		(instances
 			(project ""
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW3")
+					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -3501,7 +3501,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6cfc8b84-4412-4e7b-8056-3214523b63ed")
-		(property "Reference" "SW12"
+		(property "Reference" "SW8"
 			(at 166.37 106.68 0)
 			(effects
 				(font
@@ -3517,7 +3517,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 109.22 0)
 			(effects
 				(font
@@ -3553,7 +3553,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW12")
+					(reference "SW8")
 					(unit 1)
 				)
 			)
@@ -3834,7 +3834,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9aabc65c-7046-4c4f-9a40-f3b7bc10167d")
-		(property "Reference" "SW8"
+		(property "Reference" "SW11"
 			(at 148.59 130.81 0)
 			(effects
 				(font
@@ -3850,7 +3850,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 148.59 133.35 0)
 			(effects
 				(font
@@ -3886,7 +3886,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW8")
+					(reference "SW11")
 					(unit 1)
 				)
 			)
@@ -3968,7 +3968,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a4b9a7b9-ccf3-413d-b7f0-1fa7357fe68b")
-		(property "Reference" "SW7"
+		(property "Reference" "SW4"
 			(at 166.37 83.82 0)
 			(effects
 				(font
@@ -3984,7 +3984,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 86.36 0)
 			(effects
 				(font
@@ -4020,7 +4020,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW7")
+					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -4300,7 +4300,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ccacf454-dca3-428b-b18f-22a7320265e4")
-		(property "Reference" "SW9"
+		(property "Reference" "SW5"
 			(at 132.08 95.25 0)
 			(effects
 				(font
@@ -4316,7 +4316,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 97.79 0)
 			(effects
 				(font
@@ -4352,7 +4352,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW9")
+					(reference "SW5")
 					(unit 1)
 				)
 			)
@@ -4434,7 +4434,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cf57344e-9969-4065-9cec-a8b818ebb0df")
-		(property "Reference" "SW10"
+		(property "Reference" "SW6"
 			(at 166.37 95.25 0)
 			(effects
 				(font
@@ -4450,7 +4450,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 166.37 97.79 0)
 			(effects
 				(font
@@ -4486,7 +4486,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW10")
+					(reference "SW6")
 					(unit 1)
 				)
 			)
@@ -4568,7 +4568,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd521ca8-f94e-418a-966a-c06a8d122d46")
-		(property "Reference" "SW11"
+		(property "Reference" "SW7"
 			(at 132.08 106.68 0)
 			(effects
 				(font
@@ -4584,7 +4584,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
+		(property "Footprint" "NorthReach_Custom:SW_BUTTON_SoftTactile"
 			(at 132.08 109.22 0)
 			(effects
 				(font
@@ -4620,7 +4620,7 @@
 		(instances
 			(project "northreach_1"
 				(path "/c29bc37c-99bf-4e1f-b307-e620ade74959"
-					(reference "SW11")
+					(reference "SW7")
 					(unit 1)
 				)
 			)
